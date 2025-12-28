@@ -12,10 +12,12 @@ export default function TextForm(props) {
     const handleUpperClick = () => {
         let newText = text.toUpperCase();
         SetText(newText);
+        props.showAlert("Converted to Upper Case !!","success");
     }
     const handleLowerClick = () => {
         let newText = text.toLowerCase();
         SetText(newText);
+        props.showAlert("Converted to Lower Case !!","success");
     }
     const handleCamelClick = () => {
         let textarray = text.split(' ');
@@ -28,17 +30,21 @@ export default function TextForm(props) {
         let newText = newArray.join(' ');
         console.log(newText);
         SetText(newText);
+        props.showAlert("Converted to Title Case !!","success");
     };
     const countVowels = () => {
         const vowels = text.match(/[aeiouAEIOU]/g);
         const count = vowels ? vowels.length : 0;
-        alert(`Number of vowels: ${count}`);
+        // alert(`Number of vowels: ${count}`);
+        props.showAlert(`Number of vowels: ${count}`,"success");
     };
     const handleCopy = () => {
         navigator.clipboard.writeText(text);
+        props.showAlert("Copied to clipboard !!","success");
     };
     const handleClearClick = () => {
         SetText('');
+        props.showAlert("Text cleared !!","success");
     }
 
     function FindWordCount(text) {
@@ -59,7 +65,7 @@ export default function TextForm(props) {
                 <h1>{props.heading}</h1>
                 <div className="mb-3 ">
                     <textarea className="form-control" value={text} onChange={handleOnChange}
-                    style={{backgroundColor : props.mode === 'light' ? 'white': '#212529' ,
+                    style={{backgroundColor : props.mode === 'light' ? 'white': 'Grey' ,
                         color : props.mode === 'light' ? 'black' : 'white'
                     }} 
                     id="textBox" rows="8"></textarea>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
 
     const [myStyle, SetMyStyle] = useState(
         {
@@ -20,6 +20,8 @@ export default function About() {
                 }
             );
             SetbtnText("Enable Light Mode");
+            
+                console.log(props.bgColor);
         }
         else {
             SetMyStyle(
