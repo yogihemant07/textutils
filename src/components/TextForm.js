@@ -1,4 +1,4 @@
-import React, { useS, useState } from 'react'
+import React, {  useState } from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -72,12 +72,12 @@ export default function TextForm(props) {
                 </div>
             </div>
             <div className={`container my-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-                <button className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'}`} onClick={handleUpperClick}>UPPER CASE</button>
-                <button className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2`} onClick={handleLowerClick}>lower case</button>
-                <button className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2`} onClick={handleCamelClick}>Title Case</button>
-                <button className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2`} onClick={countVowels}>Count Vowels</button>
-                <button className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2`} onClick={handleCopy}>Copy Text</button>
-                <button className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2`} onClick={handleClearClick}>Clear</button>
+                <button disabled = {text.length === 0} className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} my-1`} onClick={handleUpperClick}>UPPER CASE</button>
+                <button disabled = {text.length === 0} className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2 my-1`} onClick={handleLowerClick}>lower case</button>
+                <button disabled = {text.length === 0} className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2 my-1`} onClick={handleCamelClick}>Title Case</button>
+                <button disabled = {text.length === 0} className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2 my-1`} onClick={countVowels}>Count Vowels</button>
+                <button disabled = {text.length === 0} className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2 my-1`} onClick={handleCopy}>Copy Text</button>
+                <button disabled = {text.length === 0} className={`btn btn-${props.mode === 'light' ? 'primary' : 'secondary'} mx-2 my-1`} onClick={handleClearClick}>Clear</button>
             </div>
             <div className={`container my-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                 <h2> Text Summary</h2>
